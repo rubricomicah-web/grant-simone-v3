@@ -1,0 +1,174 @@
+
+/* --- Admin portal layout fix --- */
+#admin .plan-grid,
+#admin .plans-grid,
+#planMatrix,
+#planMatrixOut,
+.plan-matrix,
+.admin-plans {
+ display: grid !important;
+ grid-template-columns: repeat(3, minmax(280px, 1fr)) !important;
+ gap: 24px !important;
+ align-items: stretch !important;
+ width: 100% !important;
+ max-width: 100% !important;
+}
+
+#admin .plan-card,
+#admin .pricing-card,
+#planMatrix .card,
+#planMatrixOut .card,
+.plan-matrix .card,
+.admin-plans .card {
+ min-width: 0 !important;
+ width: 100% !important;
+ max-width: none !important;
+ padding: 28px !important;
+ border-radius: 24px !important;
+ overflow: hidden !important;
+ display: flex !important;
+ flex-direction: column !important;
+ gap: 16px !important;
+}
+
+#admin .plan-card .pill,
+#admin .pricing-card .pill,
+#planMatrix .pill,
+#planMatrixOut .pill {
+ width: fit-content !important;
+ max-width: 100% !important;
+ white-space: normal !important;
+ padding: 8px 12px !important;
+ line-height: 1.2 !important;
+}
+
+#admin .plan-card h2,
+#admin .plan-card h3,
+#admin .pricing-card h2,
+#admin .pricing-card h3,
+#planMatrix h2,
+#planMatrix h3,
+#planMatrixOut h2,
+#planMatrixOut h3 {
+ font-size: clamp(22px, 2vw, 30px) !important;
+ line-height: 1.08 !important;
+ margin: 0 !important;
+ word-break: normal !important;
+ overflow-wrap: anywhere !important;
+}
+
+#admin .plan-card p,
+#admin .pricing-card p,
+#planMatrix p,
+#planMatrixOut p,
+#admin .plan-card li,
+#admin .pricing-card li,
+#planMatrix li,
+#planMatrixOut li {
+ font-size: 15px !important;
+ line-height: 1.6 !important;
+ white-space: normal !important;
+ overflow-wrap: anywhere !important;
+}
+
+#admin .plan-card .btn,
+#admin .pricing-card .btn,
+#planMatrix .btn,
+#planMatrixOut .btn {
+ margin-top: auto !important;
+ width: 100% !important;
+ white-space: normal !important;
+ text-align: center !important;
+ justify-content: center !important;
+}
+
+#admin .stats-grid,
+#admin .overview-grid,
+#admin .admin-grid,
+#admin .usage-grid {
+ display: grid !important;
+ grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+ gap: 18px !important;
+ width: 100% !important;
+}
+
+#admin .admin-section,
+#admin .section-card {
+ width: 100% !important;
+ max-width: 100% !important;
+}
+
+@media (max-width: 1100px) {
+ #admin .plan-grid,
+ #admin .plans-grid,
+ #planMatrix,
+ #planMatrixOut,
+ .plan-matrix,
+ .admin-plans {
+ grid-template-columns: 1fr !important;
+ }
+}
+
+@media (min-width: 1101px) and (max-width: 1450px) {
+ #admin .plan-grid,
+ #admin .plans-grid,
+ #planMatrix,
+ #planMatrixOut,
+ .plan-matrix,
+ .admin-plans {
+ grid-template-columns: repeat(3, minmax(220px, 1fr)) !important;
+ }
+}
+
+<style>
+
+/* RESPONSIVE LAYOUT FIXES */
+.dashboard-grid,
+.feature-grid,
+.quick-actions-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+ gap:24px;
+ align-items:stretch;
+}
+
+.plan-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+ gap:24px;
+ width:100%;
+}
+
+.card,
+.plan-card,
+.feature-card{
+ min-width:0;
+ overflow:hidden;
+}
+
+h1,h2,h3,h4,p,span,a,button{
+ word-break:break-word;
+}
+
+.main-content,
+.dashboard-content,
+.admin-content{
+ width:100%;
+ max-width:1600px;
+ margin:0 auto;
+ padding:32px;
+ box-sizing:border-box;
+}
+
+.sidebar{
+ flex-shrink:0;
+ width:260px;
+}
+
+.btn,
+button,
+a.btn{
+ white-space:nowrap;
+}
+
+</style>

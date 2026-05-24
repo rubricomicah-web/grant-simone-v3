@@ -1,0 +1,12 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.sqlite3
+grant_simone.db
+storage/uploads/*
+storage/generated/*
+.DS_Store
+.venv/
+.ENV.EXAMPLE 
+.env.example 

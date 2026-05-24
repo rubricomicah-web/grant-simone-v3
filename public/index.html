@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#98FB98">
+<title>Mogul Grant System | Pricing</title>
+<style>
+:root{--bg:#000;--panel:#071008;--card:#0b130d;--muted:#aebbad;--line:rgba(152,251,152,.18);--green:#98FB98;--white:#f7fff7;--danger:#ffb7b7}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% -10%,rgba(152,251,152,.2),transparent 34%),#000;color:var(--white);font-family:Inter,Arial,sans-serif}a{text-decoration:none}.wrap{width:min(1280px,calc(100% - 40px));margin:0 auto}.top{display:flex;align-items:center;justify-content:space-between;padding:22px 0;gap:16px}.brand{display:flex;gap:14px;align-items:center}.brand img{width:58px;height:58px;border-radius:50%;object-fit:cover;border:2px solid var(--green)}.brand h1{font-size:22px;margin:0}.brand p{margin:4px 0 0;color:var(--muted);font-size:13px}.nav-actions{display:flex;gap:12px;align-items:center}.btn{background:var(--green);color:#001b06;border:0;border-radius:15px;padding:14px 18px;font-weight:950;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}.btn.secondary{background:#101812;color:var(--green);border:1px solid var(--line)}.hero{padding:52px 0 28px;display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}.hero h2{font-size:58px;line-height:1.02;margin:0 0 18px;letter-spacing:-1.6px}.hero p{color:var(--muted);font-size:18px;line-height:1.8;margin:0}.hero-card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(152,251,152,.12),rgba(0,0,0,.55));border-radius:34px;padding:28px}.hero-card h3{color:var(--green);margin:0 0 12px}.feature-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}.feature{border:1px solid var(--line);background:rgba(0,0,0,.34);border-radius:18px;padding:14px;color:var(--green);font-weight:900;font-size:13px}.section-title{margin:44px 0 16px}.section-title span{color:var(--green);letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:950}.section-title h2{font-size:34px;margin:8px 0 0}.plan-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}.plan-card{min-width:0;display:flex;flex-direction:column;gap:10px;border:1px solid var(--line);background:rgba(6,13,8,.88);border-radius:26px;padding:24px;overflow:hidden;overflow-wrap:anywhere}.plan-card.featured{border-color:var(--green);box-shadow:0 0 0 1px rgba(152,251,152,.18),0 18px 70px rgba(152,251,152,.08)}.plan-card h3{margin:0;color:var(--green);font-size:22px}.price{font-size:30px;font-weight:950;margin:6px 0}.best{color:var(--muted);font-size:14px;line-height:1.65;min-height:70px}.plan-card ul{margin:10px 0 0;padding-left:20px;color:var(--muted);line-height:1.65;display:flex;flex-direction:column;gap:8px}.limits{color:var(--danger)!important}.limits li{color:var(--danger)!important}.plan-card .btn{margin-top:auto;width:100%;min-height:54px;text-align:center}.note{border:1px solid var(--line);background:rgba(152,251,152,.06);border-radius:22px;padding:18px;margin:28px 0 60px;color:var(--muted);line-height:1.7}.footer{padding:28px 0 45px;color:var(--muted);border-top:1px solid var(--line);margin-top:30px}@media(max-width:980px){.hero{grid-template-columns:1fr}.hero h2{font-size:40px}.plan-grid,.feature-list{grid-template-columns:1fr}.top{flex-direction:column;align-items:flex-start}.nav-actions{width:100%}.nav-actions .btn{flex:1}}
+
+/* --- Admin portal layout fix --- */
+#admin .plan-grid,
+#admin .plans-grid,
+#planMatrix,
+#planMatrixOut,
+.plan-matrix,
+.admin-plans {
+ display: grid !important;
+ grid-template-columns: repeat(3, minmax(280px, 1fr)) !important;
+ gap: 24px !important;
+ align-items: stretch !important;
+ width: 100% !important;
+ max-width: 100% !important;
+}
+
+#admin .plan-card,
+#admin .pricing-card,
+#planMatrix .card,
+#planMatrixOut .card,
+.plan-matrix .card,
+.admin-plans .card {
+ min-width: 0 !important;
+ width: 100% !important;
+ max-width: none !important;
+ padding: 28px !important;
+ border-radius: 24px !important;
+ overflow: hidden !important;
+ display: flex !important;
+ flex-direction: column !important;
+ gap: 16px !important;
+}
+
+#admin .plan-card .pill,
+#admin .pricing-card .pill,
+#planMatrix .pill,
+#planMatrixOut .pill {
+ width: fit-content !important;
+ max-width: 100% !important;
+ white-space: normal !important;
+ padding: 8px 12px !important;
+ line-height: 1.2 !important;
+}
+
+#admin .plan-card h2,
+#admin .plan-card h3,
+#admin .pricing-card h2,
+#admin .pricing-card h3,
+#planMatrix h2,
+#planMatrix h3,
+#planMatrixOut h2,
+#planMatrixOut h3 {
+ font-size: clamp(22px, 2vw, 30px) !important;
+ line-height: 1.08 !important;
+ margin: 0 !important;
+ word-break: normal !important;
+ overflow-wrap: anywhere !important;
+}
+
+#admin .plan-card p,
+#admin .pricing-card p,
+#planMatrix p,
+#planMatrixOut p,
+#admin .plan-card li,
+#admin .pricing-card li,
+#planMatrix li,
+#planMatrixOut li {
+ font-size: 15px !important;
+ line-height: 1.6 !important;
+ white-space: normal !important;
+ overflow-wrap: anywhere !important;
+}
+
+#admin .plan-card .btn,
+#admin .pricing-card .btn,
+#planMatrix .btn,
+#planMatrixOut .btn {
+ margin-top: auto !important;
+ width: 100% !important;
+ white-space: normal !important;
+ text-align: center !important;
+ justify-content: center !important;
+}
+
+#admin .stats-grid,
+#admin .overview-grid,
+#admin .admin-grid,
+#admin .usage-grid {
+ display: grid !important;
+ grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+ gap: 18px !important;
+ width: 100% !important;
+}
+
+#admin .admin-section,
+#admin .section-card {
+ width: 100% !important;
+ max-width: 100% !important;
+}
+
+@media (max-width: 1100px) {
+ #admin .plan-grid,
+ #admin .plans-grid,
+ #planMatrix,
+ #planMatrixOut,
+ .plan-matrix,
+ .admin-plans {
+ grid-template-columns: 1fr !important;
+ }
+}
+
+@media (min-width: 1101px) and (max-width: 1450px) {
+ #admin .plan-grid,
+ #admin .plans-grid,
+ #planMatrix,
+ #planMatrixOut,
+ .plan-matrix,
+ .admin-plans {
+ grid-template-columns: repeat(3, minmax(220px, 1fr)) !important;
+ }
+}
+
+/* --- Admin landscape layout upgrade --- */
+#admin {
+ max-width: none !important;
+}
+
+#admin .hero,
+#admin .admin-hero,
+#admin .section-card:first-child {
+ max-width: 100% !important;
+}
+
+#admin .admin-landscape-shell,
+#admin .admin-dashboard-layout,
+#admin .admin-content,
+#admin .admin-main {
+ width: 100% !important;
+ max-width: 100% !important;
+}
+
+#admin .plan-grid,
+#admin .plans-grid,
+#planMatrix,
+#planMatrixOut,
+.plan-matrix,
+.admin-plans {
+ display: grid !important;
+ grid-template-columns: repeat(3, minmax(320px, 1fr)) !important;
+ gap: 28px !important;
+ align-items: stretch !important;
+ width: 100% !important;
+ max-width: 1480px !important;
+}
+
+#admin .plan-card,
+#admin .pricing-card,
+#planMatrix .card,
+#planMatrixOut .card,
+.plan-matrix .card,
+.admin-plans .card {
+ min-height: 430px !important;
+ padding: 34px !important;
+}
+
+#admin .admin-overview-row,
+#admin .admin-landscape-row,
+#admin .admin-two-column {
+ display: grid !important;
+ grid-template-columns: minmax(0, 1.1fr) minmax(360px, .9fr) !important;
+ gap: 28px !important;
+ align-items: start !important;
+ width: 100% !important;
+ max-width: 1480px !important;
+}
+
+#admin .stats-grid,
+#admin .overview-grid,
+#admin .admin-grid {
+ grid-template-columns: repeat(4, minmax(150px, 1fr)) !important;
+ gap: 18px !important;
+}
+
+#admin .usage-grid {
+ grid-template-columns: repeat(3, minmax(160px, 1fr)) !important;
+ gap: 18px !important;
+}
+
+#admin h1 {
+ font-size: clamp(44px, 5vw, 72px) !important;
+}
+
+#admin h2 {
+ font-size: clamp(26px, 2.4vw, 42px) !important;
+}
+
+#admin .section-title,
+#admin h3 {
+ line-height: 1.1 !important;
+}
+
+@media (max-width: 1280px) {
+ #admin .plan-grid,
+ #admin .plans-grid,
+ #planMatrix,
+ #planMatrixOut,
+ .plan-matrix,
+ .admin-plans {
+ grid-template-columns: repeat(3, minmax(240px, 1fr)) !important;
+ }
+
+ #admin .admin-overview-row,
+ #admin .admin-landscape-row,
+ #admin .admin-two-column {
+ grid-template-columns: 1fr !important;
+ }
+}
+
+@media (max-width: 920px) {
+ #admin .plan-grid,
+ #admin .plans-grid,
+ #planMatrix,
+ #planMatrixOut,
+ .plan-matrix,
+ .admin-plans {
+ grid-template-columns: 1fr !important;
+ }
+
+ #admin .stats-grid,
+ #admin .overview-grid,
+ #admin .admin-grid,
+ #admin .usage-grid {
+ grid-template-columns: 1fr 1fr !important;
+ }
+}
+
+@media (max-width: 620px) {
+ #admin .stats-grid,
+ #admin .overview-grid,
+ #admin .admin-grid,
+ #admin .usage-grid {
+ grid-template-columns: 1fr !important;
+ }
+}
+
+/* RESPONSIVE LAYOUT FIXES */
+.dashboard-grid,
+.feature-grid,
+.quick-actions-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+ gap:24px;
+ align-items:stretch;
+}
+
+.plan-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+ gap:24px;
+ width:100%;
+}
+
+.card,
+.plan-card,
+.feature-card{
+ min-width:0;
+ overflow:hidden;
+}
+
+h1,h2,h3,h4,p,span,a,button{
+ word-break:break-word;
+}
+
+.main-content,
+.dashboard-content,
+.admin-content{
+ width:100%;
+ max-width:1600px;
+ margin:0 auto;
+ padding:32px;
+ box-sizing:border-box;
+}
+
+.sidebar{
+ flex-shrink:0;
+ width:260px;
+}
+
+.btn,
+button,
+a.btn{
+ white-space:nowrap;
+}
+
+/* --- FINAL DASHBOARD + ADMIN ALIGNMENT FIX --- */
+
+/* Dashboard action cards: force clean equal 3-column alignment */
+#dashboard .grid.three,
+#dashboard .grid.three.admin-plans,
+#dashboard .quick-actions-grid,
+#dashboard .dashboard-grid,
+#dashboard .feature-grid {
+ display: grid !important;
+ grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+ gap: 28px !important;
+ width: 100% !important;
+ align-items: stretch !important;
+}
+
+#dashboard .grid.three > *,
+#dashboard .quick-actions-grid > *,
+#dashboard .dashboard-grid > *,
+#dashboard .feature-grid > * {
+ width: 100% !important;
+ min-width: 0 !important;
+ max-width: none !important;
+}
+
+/* Dashboard cards should not allow text to run through neighboring cards */
+#dashboard .card,
+#dashboard .item,
+#dashboard .feature-card,
+#dashboard .action-card {
+ min-width: 0 !important;
+ overflow: hidden !important;
+ padding: 32px !important;
+ border-radius: 28px !important;
+}
+
+#dashboard .card p,
+#dashboard .item p,
+#dashboard .feature-card p,
+#dashboard .action-card p {
+ max-width: 100% !important;
+ overflow-wrap: anywhere !important;
+ word-break: normal !important;
+ line-height: 1.65 !important;
+}
+
+/* Admin page: plan cards must be landscape-wide, not skinny */
+#admin .grid.three,
+#admin .grid.three.admin-plans,
+#admin .admin-plans,
+#admin .plan-grid,
+#admin .plans-grid,
+#admin #planMatrix,
+#admin #planMatrixOut,
+#planMatrix,
+#planMatrixOut {
+ display: grid !important;
+ grid-template-columns: repeat(3, minmax(300px, 1fr)) !important;
+ gap: 28px !important;
+ width: 100% !important;
+ max-width: 1480px !important;
+ align-items: stretch !important;
+}
+
+/* The previous patch made cards too narrow. Override every possible card class. */
+#admin .grid.three > *,
+#admin .admin-plans > *,
+#admin .plan-grid > *,
+#admin .plans-grid > *,
+#planMatrix > *,
+#planMatrixOut > * {
+ width: 100% !important;
+ min-width: 300px !important;
+ max-width: none !important;
+ flex: 1 1 auto !important;
+}
+
+#admin .card,
+#admin .plan-card,
+#admin .pricing-card,
+#admin .item {
+ width: 100% !important;
+ min-width: 0 !important;
+ max-width: none !important;
+ padding: 32px !important;
+ border-radius: 28px !important;
+ overflow: hidden !important;
+}
+
+/* Do not let pills compress the card text */
+#admin .pill {
+ display: inline-flex !important;
+ width: auto !important;
+ max-width: 100% !important;
+ min-width: 0 !important;
+ white-space: normal !important;
+ align-self: flex-start !important;
+ padding: 8px 14px !important;
+ line-height: 1.25 !important;
+}
+
+/* Admin plan text must read horizontally, not vertical stacked words */
+#admin h2,
+#admin h3,
+#admin h4,
+#admin p,
+#admin li,
+#admin span,
+#admin strong,
+#admin button,
+#admin a,
+#dashboard h2,
+#dashboard h3,
+#dashboard h4,
+#dashboard p,
+#dashboard span {
+ word-break: normal !important;
+ overflow-wrap: break-word !important;
+ white-space: normal !important;
+}
+
+#admin .btn,
+#admin button,
+#admin a.btn {
+ white-space: normal !important;
+ min-width: 0 !important;
+}
+
+/* Admin overview should also align in landscape rows */
+#admin .overview-grid,
+#admin .stats-grid,
+#admin .admin-grid,
+#admin .usage-grid {
+ display: grid !important;
+ grid-template-columns: repeat(4, minmax(180px, 1fr)) !important;
+ gap: 20px !important;
+ width: 100% !important;
+ max-width: 1480px !important;
+}
+
+#admin .admin-two-column,
+#admin .admin-overview-row,
+#admin .admin-landscape-row {
+ display: grid !important;
+ grid-template-columns: minmax(0, 1fr) minmax(320px, .8fr) !important;
+ gap: 32px !important;
+ align-items: start !important;
+ width: 100% !important;
+ max-width: 1480px !important;
+}
+
+/* Keep page content centered and wide */
+#admin,
+#dashboard {
+ width: 100% !important;
+}
+
+.app main,
+.main-content,
+.dashboard-content,
+.admin-content {
+ min-width: 0 !important;
+}
+
+/* Responsive fallbacks */
+@media (max-width: 1180px) {
+ #dashboard .grid.three,
+ #dashboard .quick-actions-grid,
+ #dashboard .dashboard-grid,
+ #dashboard .feature-grid,
+ #admin .grid.three,
+ #admin .admin-plans,
+ #admin .plan-grid,
+ #admin .plans-grid,
+ #planMatrix,
+ #planMatrixOut {
+ grid-template-columns: 1fr !important;
+ }
+
+ #admin .grid.three > *,
+ #admin .admin-plans > *,
+ #admin .plan-grid > *,
+ #admin .plans-grid > *,
+ #planMatrix > *,
+ #planMatrixOut > * {
+ min-width: 0 !important;
+ }
+
+ #admin .overview-grid,
+ #admin .stats-grid,
+ #admin .admin-grid,
+ #admin .usage-grid {
+ grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+ }
+
+ #admin .admin-two-column,
+ #admin .admin-overview-row,
+ #admin .admin-landscape-row {
+ grid-template-columns: 1fr !important;
+ }
+}
+
+@media (max-width: 680px) {
+ #admin .overview-grid,
+ #admin .stats-grid,
+ #admin .admin-grid,
+ #admin .usage-grid {
+ grid-template-columns: 1fr !important;
+ }
+
+ #dashboard .card,
+ #dashboard .item,
+ #admin .card,
+ #admin .item {
+ padding: 24px !important;
+ }
+}
+
+/* --- ADMIN PLAN CARDS SAME SIZE AS INDEX PRICING CARDS --- */
+#admin {
+ width: 100% !important;
+}
+
+#admin .hero,
+#admin .section-card:first-child {
+ width: 100% !important;
+ max-width: 1320px !important;
+}
+
+#admin #planMatrixOut,
+#admin #planMatrix,
+#admin .admin-plans,
+#admin .plans-grid,
+#admin .plan-grid,
+#admin .grid.three.admin-plans,
+#admin .grid.three.plan-matrix {
+ display: grid !important;
+ grid-template-columns: repeat(3, minmax(320px, 1fr)) !important;
+ gap: 28px !important;
+ width: 100% !important;
+ max-width: 1320px !important;
+ align-items: stretch !important;
+}
+
+#admin #planMatrixOut > *,
+#admin #planMatrix > *,
+#admin .admin-plans > *,
+#admin .plans-grid > *,
+#admin .plan-grid > * {
+ width: 100% !important;
+ min-width: 0 !important;
+ max-width: none !important;
+}
+
+#admin #planMatrixOut .card,
+#admin #planMatrix .card,
+#admin .admin-plans .card,
+#admin .plan-card,
+#admin .pricing-card {
+ width: 100% !important;
+ min-width: 0 !important;
+ max-width: none !important;
+ min-height: 520px !important;
+ padding: 34px !important;
+ border-radius: 28px !important;
+ display: flex !important;
+ flex-direction: column !important;
+ gap: 18px !important;
+ overflow: hidden !important;
+}
+
+#admin #planMatrixOut h2,
+#admin #planMatrix h2,
+#admin #planMatrixOut h3,
+#admin #planMatrix h3,
+#admin .admin-plans h2,
+#admin .admin-plans h3,
+#admin .plan-card h2,
+#admin .plan-card h3 {
+ font-size: clamp(26px, 2vw, 34px) !important;
+ line-height: 1.08 !important;
+ margin: 0 0 12px !important;
+ white-space: normal !important;
+ word-break: normal !important;
+ overflow-wrap: break-word !important;
+}
+
+#admin #planMatrixOut p,
+#admin #planMatrix p,
+#admin .admin-plans p,
+#admin .plan-card p,
+#admin #planMatrixOut li,
+#admin #planMatrix li,
+#admin .admin-plans li,
+#admin .plan-card li {
+ font-size: 15px !important;
+ line-height: 1.65 !important;
+ white-space: normal !important;
+ word-break: normal !important;
+ overflow-wrap: break-word !important;
+}
+
+#admin #planMatrixOut .pill,
+#admin #planMatrix .pill,
+#admin .admin-plans .pill,
+#admin .plan-card .pill {
+ width: fit-content !important;
+ max-width: 100% !important;
+ min-width: 0 !important;
+ white-space: normal !important;
+ line-height: 1.2 !important;
+ padding: 8px 14px !important;
+}
+
+#admin #planMatrixOut .btn,
+#admin #planMatrix .btn,
+#admin .admin-plans .btn,
+#admin .plan-card .btn {
+ margin-top: auto !important;
+ width: 100% !important;
+ justify-content: center !important;
+ text-align: center !important;
+ white-space: normal !important;
+}
+
+#admin .overview-grid,
+#admin .stats-grid,
+#admin .admin-grid,
+#admin .usage-grid {
+ display: grid !important;
+ grid-template-columns: repeat(4, minmax(180px, 1fr)) !important;
+ gap: 20px !important;
+ max-width: 1320px !important;
+ width: 100% !important;
+}
+
+@media (max-width: 1180px) {
+ #admin #planMatrixOut,
+ #admin #planMatrix,
+ #admin .admin-plans,
+ #admin .plans-grid,
+ #admin .plan-grid {
+ grid-template-columns: 1fr !important;
+ max-width: 760px !important;
+ }
+
+ #admin .overview-grid,
+ #admin .stats-grid,
+ #admin .admin-grid,
+ #admin .usage-grid {
+ grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+ }
+}
+
+@media (max-width: 680px) {
+ #admin .overview-grid,
+ #admin .stats-grid,
+ #admin .admin-grid,
+ #admin .usage-grid {
+ grid-template-columns: 1fr !important;
+ }
+}
+
+</style>
+
+<style id="grant-simone-premium-typography">
+:root{
+ --bg:#020503;
+ --panel:#07110a;
+ --card:#09120b;
+ --card2:#0d1a10;
+ --muted:#a6b7aa;
+ --soft:#dbe8dc;
+ --line:rgba(142, 244, 161, .16);
+ --green:#8EF4A2;
+ --green2:#64D87A;
+ --white:#F4FBF4;
+ --shadow:0 28px 90px rgba(0,0,0,.42);
+}
+html{font-size:16px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:geometricPrecision;}
+body,
+button,input,textarea,select{
+ font-family:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif!important;
+ letter-spacing:-0.012em;
+}
+body{background:radial-gradient(circle at 72% -10%,rgba(120,210,135,.13),transparent 34%),linear-gradient(180deg,#020503 0%,#000 100%)!important;color:var(--white)!important;}
+h1,h2,h3,h4,.brand h1,.hero h2,.page h2{
+ font-family:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif!important;
+ font-weight:760!important;
+ letter-spacing:-0.045em!important;
+ line-height:1.04!important;
+ color:#f8fff8!important;
+}
+h1{font-size:clamp(30px,4vw,56px)!important;}
+h2,.hero h2,.page h2{font-size:clamp(28px,3.1vw,44px)!important;}
+h3{font-size:clamp(18px,2vw,24px)!important;}
+p,.muted,.card p,.item p,.hero p,li,label,small,span{line-height:1.62;}
+.muted,.card p,.item p,.hero p,.brand p,.mini{color:var(--muted)!important;font-weight:430!important;}
+strong,b{font-weight:720!important;}
+.btn,button,.nav button,.tab{
+ font-weight:680!important;
+ letter-spacing:-0.018em!important;
+ border-radius:14px!important;
+ box-shadow:none!important;
+ transition:transform .18s ease,border-color .18s ease,background .18s ease,opacity .18s ease!important;
+}
+.btn:hover,button:hover,.nav button:hover{transform:translateY(-1px);}
+.btn{background:linear-gradient(180deg,#9BFFAA,#77E68C)!important;color:#041107!important;border:1px solid rgba(255,255,255,.06)!important;}
+.btn.secondary,.nav button,.tab{background:rgba(255,255,255,.025)!important;color:#E6F2E7!important;border:1px solid var(--line)!important;}
+.btn.secondary:hover,.nav button:hover,.nav button.active,.tab.active{background:rgba(142,244,162,.10)!important;color:var(--green)!important;border-color:rgba(142,244,162,.28)!important;}
+.card,.item,.hero,.auth-card,.auth-hero,.plan-card,.usage-card,.action-card,.metric,.workflow-card,.application-card,.profile-card{
+ background:linear-gradient(180deg,rgba(13,26,16,.84),rgba(5,10,7,.88))!important;
+ border:1px solid var(--line)!important;
+ border-radius:24px!important;
+ box-shadow:0 18px 70px rgba(0,0,0,.22)!important;
+}
+.hero{background:linear-gradient(145deg,rgba(142,244,162,.13),rgba(6,12,8,.86))!important;border-radius:28px!important;}
+.side{background:linear-gradient(180deg,rgba(7,17,10,.96),rgba(3,8,5,.98))!important;}
+.brand img{border-color:rgba(142,244,162,.75)!important;box-shadow:0 0 0 4px rgba(142,244,162,.08)!important;}
+.pill{background:rgba(142,244,162,.08)!important;border-color:rgba(142,244,162,.18)!important;color:var(--green)!important;font-weight:650!important;letter-spacing:-.01em!important;}
+input,textarea,select{
+ background:rgba(255,255,255,.025)!important;
+ border:1px solid rgba(142,244,162,.16)!important;
+ border-radius:14px!important;
+ color:#f5fff5!important;
+ font-weight:430!important;
+}
+input::placeholder,textarea::placeholder{color:rgba(219,232,220,.42)!important;}
+.log{font-family:"SF Mono", ui-monospace, Menlo, Consolas, monospace!important;font-size:13px!important;line-height:1.55!important;}
+.status,.badge{font-weight:650!important;}
+.price,.usage-card strong{font-weight:760!important;letter-spacing:-.045em!important;color:var(--green)!important;}
+.results,.grid{gap:18px!important;}
+.card,.item{padding:22px!important;}
+@media(max-width:900px){.main{padding:18px!important}.app{grid-template-columns:1fr!important}.side{position:relative!important;height:auto!important}.hero h2{font-size:32px!important}}
+
+/* RESPONSIVE LAYOUT FIXES */
+.dashboard-grid,
+.feature-grid,
+.quick-actions-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+ gap:24px;
+ align-items:stretch;
+}
+
+.plan-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+ gap:24px;
+ width:100%;
+}
+
+.card,
+.plan-card,
+.feature-card{
+ min-width:0;
+ overflow:hidden;
+}
+
+h1,h2,h3,h4,p,span,a,button{
+ word-break:break-word;
+}
+
+.main-content,
+.dashboard-content,
+.admin-content{
+ width:100%;
+ max-width:1600px;
+ margin:0 auto;
+ padding:32px;
+ box-sizing:border-box;
+}
+
+.sidebar{
+ flex-shrink:0;
+ width:260px;
+}
+
+.btn,
+button,
+a.btn{
+ white-space:nowrap;
+}
+
+</style>
+
+<style id="grant-simone-premium-spacing-fix">
+:root{
+ --page-max:1360px;
+ --page-gutter:clamp(24px,4vw,72px);
+}
+body{overflow-x:hidden;}
+.wrap{
+ width:min(var(--page-max), calc(100% - (var(--page-gutter) * 2)))!important;
+ max-width:var(--page-max)!important;
+}
+.top{
+ padding:clamp(28px,3vw,46px) 0 18px!important;
+}
+.brand{gap:18px!important;}
+.brand img{width:64px!important;height:64px!important;}
+.brand h1{font-size:clamp(32px,4vw,58px)!important;letter-spacing:-.055em!important;}
+.brand p{font-size:15px!important;margin-top:8px!important;}
+.nav-actions{gap:16px!important;}
+.nav-actions .btn{padding:16px 24px!important;border-radius:18px!important;}
+.hero{
+ margin-top:24px!important;
+ padding:clamp(64px,7vw,104px) clamp(48px,6vw,88px)!important;
+ grid-template-columns:minmax(0,1fr) minmax(360px,.72fr)!important;
+ gap:clamp(56px,7vw,96px)!important;
+ border-radius:36px!important;
+ align-items:center!important;
+}
+.hero h2{
+ max-width:760px!important;
+ font-size:clamp(44px,5vw,74px)!important;
+ line-height:.98!important;
+ letter-spacing:-.065em!important;
+ margin-bottom:26px!important;
+}
+.hero p{
+ max-width:720px!important;
+ font-size:clamp(18px,1.65vw,22px)!important;
+ line-height:1.72!important;
+}
+.hero-card{
+ padding:clamp(36px,4vw,54px)!important;
+ border-radius:32px!important;
+ min-height:310px!important;
+ display:flex!important;
+ flex-direction:column!important;
+ justify-content:center!important;
+}
+.hero-card h3{font-size:clamp(22px,2.1vw,30px)!important;margin-bottom:16px!important;}
+.hero-card p{font-size:18px!important;line-height:1.75!important;}
+.feature-list{gap:16px!important;margin-top:30px!important;}
+.feature{padding:17px 18px!important;border-radius:18px!important;font-size:14px!important;}
+.section-title{margin:clamp(72px,8vw,110px) 0 26px!important;}
+.section-title span{font-size:12px!important;letter-spacing:.18em!important;}
+.section-title h2{
+ max-width:850px!important;
+ font-size:clamp(36px,4.2vw,60px)!important;
+ line-height:1.03!important;
+ letter-spacing:-.058em!important;
+}
+.plan-grid{gap:clamp(22px,2.6vw,36px)!important;}
+.plan-card{
+ padding:clamp(32px,3vw,42px)!important;
+ border-radius:30px!important;
+ gap:16px!important;
+}
+.plan-card h3{font-size:clamp(22px,2vw,28px)!important;}
+.price{font-size:clamp(34px,3vw,44px)!important;margin:4px 0 14px!important;}
+.best{font-size:16px!important;line-height:1.75!important;min-height:96px!important;}
+.plan-card ul{gap:10px!important;line-height:1.7!important;font-size:15px!important;}
+.plan-card .btn{min-height:58px!important;margin-top:26px!important;}
+.footer{margin-top:90px!important;padding:34px 0 54px!important;}
+@media(max-width:1100px){
+ .hero{grid-template-columns:1fr!important;padding:48px 32px!important;gap:32px!important;}
+ .plan-grid{grid-template-columns:1fr!important;}
+ .best{min-height:auto!important;}
+}
+@media(max-width:640px){
+ .wrap{width:calc(100% - 32px)!important;}
+ .top{align-items:stretch!important;}
+ .brand img{width:52px!important;height:52px!important;}
+ .brand h1{font-size:32px!important;}
+ .hero{padding:38px 22px!important;border-radius:28px!important;}
+ .hero h2{font-size:36px!important;}
+ .feature-list{grid-template-columns:1fr!important;}
+}
+
+/* RESPONSIVE LAYOUT FIXES */
+.dashboard-grid,
+.feature-grid,
+.quick-actions-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+ gap:24px;
+ align-items:stretch;
+}
+
+.plan-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+ gap:24px;
+ width:100%;
+}
+
+.card,
+.plan-card,
+.feature-card{
+ min-width:0;
+ overflow:hidden;
+}
+
+h1,h2,h3,h4,p,span,a,button{
+ word-break:break-word;
+}
+
+.main-content,
+.dashboard-content,
+.admin-content{
+ width:100%;
+ max-width:1600px;
+ margin:0 auto;
+ padding:32px;
+ box-sizing:border-box;
+}
+
+.sidebar{
+ flex-shrink:0;
+ width:260px;
+}
+
+.btn,
+button,
+a.btn{
+ white-space:nowrap;
+}
+
+</style>
+
+<style id="grant-simone-final-ux-fixes">
+/* Final UX polish: dark native dropdowns, calmer typography, clearer action layout */
+select, select option {
+ background-color:#07110a !important;
+ color:#f4fff4 !important;
+}
+select:focus, input:focus, textarea:focus{
+ border-color:rgba(142,244,162,.48)!important;
+ box-shadow:0 0 0 4px rgba(142,244,162,.08)!important;
+}
+body,button,input,textarea,select{
+ font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif!important;
+}
+h1,h2,h3,h4,.brand h1,.page h2{
+ font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif!important;
+ font-weight:700!important;
+}
+.workflow-shell{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);gap:22px;margin-top:22px}
+.workflow-status-card,.approval-focus-card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(13,26,16,.86),rgba(5,10,7,.92));border-radius:28px;padding:32px;box-shadow:0 24px 80px rgba(0,0,0,.26)}
+.workflow-status-card h2,.approval-focus-card h2{margin:10px 0 10px;font-size:clamp(26px,2.4vw,38px)!important}
+.workflow-primary-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.workflow-checklist{display:grid;gap:10px;margin-top:18px}
+.workflow-checklist div{display:flex;justify-content:space-between;gap:12px;border:1px solid var(--line);border-radius:16px;padding:13px 15px;background:rgba(255,255,255,.025)}
+.workflow-checklist strong{color:var(--green)}
+.workflow-side-card{border:1px solid var(--line);background:rgba(255,255,255,.02);border-radius:24px;padding:24px}
+.workflow-side-card .detail-row{display:flex;justify-content:space-between;border-bottom:1px solid rgba(142,244,162,.10);padding:12px 0;gap:18px}
+.workflow-side-card .detail-row:last-child{border-bottom:0}
+.one-next-step{border:1px solid rgba(142,244,162,.24);background:rgba(142,244,162,.07);border-radius:20px;padding:18px;margin-top:18px}
+.step.done{background:rgba(142,244,162,.10)!important}.step.active{border-color:rgba(142,244,162,.50)!important;background:rgba(142,244,162,.08)!important}.step.waiting{opacity:.45}
+#loadAppsButton{display:none!important}.status-label{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:7px 11px;color:var(--green);font-size:12px;font-weight:700;background:rgba(142,244,162,.08)}
+@media(max-width:1050px){.workflow-shell{grid-template-columns:1fr}.workflow-primary-actions{flex-direction:column}.workflow-primary-actions .btn{width:100%}}
+
+/* RESPONSIVE LAYOUT FIXES */
+.dashboard-grid,
+.feature-grid,
+.quick-actions-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+ gap:24px;
+ align-items:stretch;
+}
+
+.plan-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+ gap:24px;
+ width:100%;
+}
+
+.card,
+.plan-card,
+.feature-card{
+ min-width:0;
+ overflow:hidden;
+}
+
+h1,h2,h3,h4,p,span,a,button{
+ word-break:break-word;
+}
+
+.main-content,
+.dashboard-content,
+.admin-content{
+ width:100%;
+ max-width:1600px;
+ margin:0 auto;
+ padding:32px;
+ box-sizing:border-box;
+}
+
+.sidebar{
+ flex-shrink:0;
+ width:260px;
+}
+
+.btn,
+button,
+a.btn{
+ white-space:nowrap;
+}
+
+</style>
+
+<style id="gs-final-polish-fixes">
+select, select option { background-color:#050805 !important; color:#f7fff7 !important; }
+select:focus, input:focus, textarea:focus { border-color:rgba(142,244,162,.55)!important; box-shadow:0 0 0 4px rgba(142,244,162,.08)!important; }
+.workflow-primary-actions .btn,.approval-focus-card .btn,.workflow-status-card .btn { pointer-events:auto!important; position:relative; z-index:3; }
+.approval-focus-card,.workflow-status-card,.workflow-side-card{box-shadow:0 24px 80px rgba(0,0,0,.28);}
+.one-next-step{border:1px solid rgba(142,244,162,.22);background:rgba(142,244,162,.055);border-radius:18px;padding:18px;margin:18px 0;}
+.clean-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}.clean-summary div{border:1px solid var(--line);border-radius:16px;padding:14px;background:rgba(0,0,0,.18)}.clean-summary span{display:block;color:var(--muted);font-size:12px;margin-bottom:6px}.clean-summary strong{color:var(--green)}
+
+/* RESPONSIVE LAYOUT FIXES */
+.dashboard-grid,
+.feature-grid,
+.quick-actions-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+ gap:24px;
+ align-items:stretch;
+}
+
+.plan-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+ gap:24px;
+ width:100%;
+}
+
+.card,
+.plan-card,
+.feature-card{
+ min-width:0;
+ overflow:hidden;
+}
+
+h1,h2,h3,h4,p,span,a,button{
+ word-break:break-word;
+}
+
+.main-content,
+.dashboard-content,
+.admin-content{
+ width:100%;
+ max-width:1600px;
+ margin:0 auto;
+ padding:32px;
+ box-sizing:border-box;
+}
+
+.sidebar{
+ flex-shrink:0;
+ width:260px;
+}
+
+.btn,
+button,
+a.btn{
+ white-space:nowrap;
+}
+
+</style>
+
+<link rel="stylesheet" href="/admin_layout_fix.css">
+<link rel="stylesheet" href="/admin_landscape_layout.css">
+<link rel="stylesheet" href="/final_alignment_fix.css">
+<link rel="stylesheet" href="/admin_match_index_plans.css">
+</head>
+<body>
+<div class="wrap">
+ <header class="top">
+ <div class="brand"><img src="/grant-simone.jpeg" alt="Mogul Grant System"><div><h1>Mogul Grant System</h1><p>Autonomous Universal Funding Platform</p></div></div>
+ <div class="nav-actions"><a class="btn secondary" href="/signup.html?mode=login">Login</a><a class="btn" href="#plans">View Plans</a></div>
+ </header>
+
+ <section class="hero">
+ <div>
+ <h2>An AI funding operating system for individuals, business owners, and white-label partners.</h2>
+ <p>Choose Individual Elite, Business Owner, or White Label Platform, then create your account and start your funding workflow.</p>
+ </div>
+ <div class="hero-card">
+ <h3>Start smarter</h3>
+ <p>Find funding, generate application narratives, and track opportunities in one workspace.</p>
+ <div class="feature-list"><div class="feature">✓ Grants + scholarships</div><div class="feature">✓ Private funding</div><div class="feature">✓ Email alerts</div><div class="feature">✓ AI workflows</div></div>
+ </div>
+ </section>
+
+ <main id="plans">
+ <div class="section-title"><span>Simple paid plans</span><h2>Choose the right funding operating system.</h2></div>
+ <div class="plan-grid">
+ <div class="plan-card featured"><h3>Individual Elite</h3><div class="price">$99/mo</div><p class="best">For individuals, students, creators, researchers, freelancers, founders, and independent operators managing serious funding workflows.</p><ul><li>Unlimited funding opportunity discovery</li><li>AI proposal drafting and application narratives</li><li>Funding health score and AI recommendations</li><li>Agent Pipeline for eligibility, budget, compliance, review, and submission planning</li><li>PDF exports, document uploads, saved opportunities, and alerts</li><li>1 user seat</li></ul><ul class="limits"><li>No team workspace</li><li>No white-label portal</li></ul><a class="btn" href="/signup.html?plan=individual_elite">Start Individual Elite</a></div>
+ <div class="plan-card"><h3>Business Owner</h3><div class="price">$299/mo</div><p class="best">For business owners, nonprofits, startups, consultants, and small teams that need a full AI funding operating system.</p><ul><li>Everything in Individual Elite</li><li>Business, nonprofit, public, private, corporate, and foundation grant intelligence</li><li>Organization Brain with shared business funding memory</li><li>Team workspace for up to 5 seats</li><li>Multi-application pipeline and approval center</li><li>Budget narrative support and submission package tracking</li></ul><ul class="limits"><li>No white-label client portal</li></ul><a class="btn secondary" href="/signup.html?plan=business_owner">Start Business Owner</a></div>
+ <div class="plan-card"><h3>White Label Platform</h3><div class="price">$5,000/yr</div><p class="best">For agencies, consultants, accelerators, and companies that want to sell Mogul Grant System as their own branded funding platform.</p><ul><li>Everything in Business Owner</li><li>Custom branding, logo, colors, and client portal</li><li>White-label tenant controls and admin dashboard</li><li>Custom domain-ready architecture</li><li>Partner analytics and high-volume AI workflows</li><li>Dedicated onboarding and enterprise support</li></ul><a class="btn secondary" href="/signup.html?plan=white_label_platform">Book White Label Access</a></div>
+ </div>
+ 
+ </main>
+ <footer class="footer">© Mogul Grant System. AI funding guidance does not guarantee awards. Always verify eligibility and deadlines on the official funding source before applying.</footer>
+</div>
+<script>if("serviceWorker" in navigator){navigator.serviceWorker.register("/sw.js").catch(()=>{});}</script>
+</body>
+</html>

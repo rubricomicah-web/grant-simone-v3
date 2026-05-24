@@ -1,0 +1,57 @@
+ADMIN PORTAL LANDSCAPE FIX
+
+Replace/add this CSS:
+
+.admin-shell {
+    width: 100%;
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 32px 40px;
+}
+
+.admin-plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(320px, 1fr));
+    gap: 28px;
+    width: 100%;
+    align-items: stretch;
+}
+
+.admin-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(220px, 1fr));
+    gap: 22px;
+    width: 100%;
+}
+
+.admin-plan-card,
+.admin-stat-card {
+    width: 100%;
+    min-height: 100%;
+}
+
+@media (max-width: 1400px) {
+    .admin-overview-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .admin-plans-grid,
+    .admin-overview-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+Replace:
+<div class="admin-content">
+
+With:
+<div class="admin-shell">
+
+Remove:
+max-width: 900px;
+width: 240px;
+flex-direction: column;
+
+from admin cards/wrappers.

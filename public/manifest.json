@@ -1,0 +1,15 @@
+{
+  "name": "Grant Simone OS",
+  "short_name": "Grant Simone",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#98FB98",
+  "icons": [
+    {
+      "src": "/grant-simone.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    }
+  ]
+}

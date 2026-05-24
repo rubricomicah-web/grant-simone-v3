@@ -1,0 +1,145 @@
+
+/* --- ADMIN PLAN CARDS SAME SIZE AS INDEX PRICING CARDS --- */
+#admin {
+ width: 100% !important;
+}
+
+#admin .hero,
+#admin .section-card:first-child {
+ width: 100% !important;
+ max-width: 1320px !important;
+}
+
+#admin #planMatrixOut,
+#admin #planMatrix,
+#admin .admin-plans,
+#admin .plans-grid,
+#admin .plan-grid,
+#admin .grid.three.admin-plans,
+#admin .grid.three.plan-matrix {
+ display: grid !important;
+ grid-template-columns: repeat(3, minmax(320px, 1fr)) !important;
+ gap: 28px !important;
+ width: 100% !important;
+ max-width: 1320px !important;
+ align-items: stretch !important;
+}
+
+#admin #planMatrixOut > *,
+#admin #planMatrix > *,
+#admin .admin-plans > *,
+#admin .plans-grid > *,
+#admin .plan-grid > * {
+ width: 100% !important;
+ min-width: 0 !important;
+ max-width: none !important;
+}
+
+#admin #planMatrixOut .card,
+#admin #planMatrix .card,
+#admin .admin-plans .card,
+#admin .plan-card,
+#admin .pricing-card {
+ width: 100% !important;
+ min-width: 0 !important;
+ max-width: none !important;
+ min-height: 520px !important;
+ padding: 34px !important;
+ border-radius: 28px !important;
+ display: flex !important;
+ flex-direction: column !important;
+ gap: 18px !important;
+ overflow: hidden !important;
+}
+
+#admin #planMatrixOut h2,
+#admin #planMatrix h2,
+#admin #planMatrixOut h3,
+#admin #planMatrix h3,
+#admin .admin-plans h2,
+#admin .admin-plans h3,
+#admin .plan-card h2,
+#admin .plan-card h3 {
+ font-size: clamp(26px, 2vw, 34px) !important;
+ line-height: 1.08 !important;
+ margin: 0 0 12px !important;
+ white-space: normal !important;
+ word-break: normal !important;
+ overflow-wrap: break-word !important;
+}
+
+#admin #planMatrixOut p,
+#admin #planMatrix p,
+#admin .admin-plans p,
+#admin .plan-card p,
+#admin #planMatrixOut li,
+#admin #planMatrix li,
+#admin .admin-plans li,
+#admin .plan-card li {
+ font-size: 15px !important;
+ line-height: 1.65 !important;
+ white-space: normal !important;
+ word-break: normal !important;
+ overflow-wrap: break-word !important;
+}
+
+#admin #planMatrixOut .pill,
+#admin #planMatrix .pill,
+#admin .admin-plans .pill,
+#admin .plan-card .pill {
+ width: fit-content !important;
+ max-width: 100% !important;
+ min-width: 0 !important;
+ white-space: normal !important;
+ line-height: 1.2 !important;
+ padding: 8px 14px !important;
+}
+
+#admin #planMatrixOut .btn,
+#admin #planMatrix .btn,
+#admin .admin-plans .btn,
+#admin .plan-card .btn {
+ margin-top: auto !important;
+ width: 100% !important;
+ justify-content: center !important;
+ text-align: center !important;
+ white-space: normal !important;
+}
+
+#admin .overview-grid,
+#admin .stats-grid,
+#admin .admin-grid,
+#admin .usage-grid {
+ display: grid !important;
+ grid-template-columns: repeat(4, minmax(180px, 1fr)) !important;
+ gap: 20px !important;
+ max-width: 1320px !important;
+ width: 100% !important;
+}
+
+@media (max-width: 1180px) {
+ #admin #planMatrixOut,
+ #admin #planMatrix,
+ #admin .admin-plans,
+ #admin .plans-grid,
+ #admin .plan-grid {
+ grid-template-columns: 1fr !important;
+ max-width: 760px !important;
+ }
+
+ #admin .overview-grid,
+ #admin .stats-grid,
+ #admin .admin-grid,
+ #admin .usage-grid {
+ grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+ }
+}
+
+@media (max-width: 680px) {
+ #admin .overview-grid,
+ #admin .stats-grid,
+ #admin .admin-grid,
+ #admin .usage-grid {
+ grid-template-columns: 1fr !important;
+ }
+}

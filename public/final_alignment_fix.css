@@ -1,0 +1,217 @@
+
+/* --- FINAL DASHBOARD + ADMIN ALIGNMENT FIX --- */
+
+/* Dashboard action cards: force clean equal 3-column alignment */
+#dashboard .grid.three,
+#dashboard .grid.three.admin-plans,
+#dashboard .quick-actions-grid,
+#dashboard .dashboard-grid,
+#dashboard .feature-grid {
+ display: grid !important;
+ grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+ gap: 28px !important;
+ width: 100% !important;
+ align-items: stretch !important;
+}
+
+#dashboard .grid.three > *,
+#dashboard .quick-actions-grid > *,
+#dashboard .dashboard-grid > *,
+#dashboard .feature-grid > * {
+ width: 100% !important;
+ min-width: 0 !important;
+ max-width: none !important;
+}
+
+/* Dashboard cards should not allow text to run through neighboring cards */
+#dashboard .card,
+#dashboard .item,
+#dashboard .feature-card,
+#dashboard .action-card {
+ min-width: 0 !important;
+ overflow: hidden !important;
+ padding: 32px !important;
+ border-radius: 28px !important;
+}
+
+#dashboard .card p,
+#dashboard .item p,
+#dashboard .feature-card p,
+#dashboard .action-card p {
+ max-width: 100% !important;
+ overflow-wrap: anywhere !important;
+ word-break: normal !important;
+ line-height: 1.65 !important;
+}
+
+/* Admin page: plan cards must be landscape-wide, not skinny */
+#admin .grid.three,
+#admin .grid.three.admin-plans,
+#admin .admin-plans,
+#admin .plan-grid,
+#admin .plans-grid,
+#admin #planMatrix,
+#admin #planMatrixOut,
+#planMatrix,
+#planMatrixOut {
+ display: grid !important;
+ grid-template-columns: repeat(3, minmax(300px, 1fr)) !important;
+ gap: 28px !important;
+ width: 100% !important;
+ max-width: 1480px !important;
+ align-items: stretch !important;
+}
+
+/* The previous patch made cards too narrow. Override every possible card class. */
+#admin .grid.three > *,
+#admin .admin-plans > *,
+#admin .plan-grid > *,
+#admin .plans-grid > *,
+#planMatrix > *,
+#planMatrixOut > * {
+ width: 100% !important;
+ min-width: 300px !important;
+ max-width: none !important;
+ flex: 1 1 auto !important;
+}
+
+#admin .card,
+#admin .plan-card,
+#admin .pricing-card,
+#admin .item {
+ width: 100% !important;
+ min-width: 0 !important;
+ max-width: none !important;
+ padding: 32px !important;
+ border-radius: 28px !important;
+ overflow: hidden !important;
+}
+
+/* Do not let pills compress the card text */
+#admin .pill {
+ display: inline-flex !important;
+ width: auto !important;
+ max-width: 100% !important;
+ min-width: 0 !important;
+ white-space: normal !important;
+ align-self: flex-start !important;
+ padding: 8px 14px !important;
+ line-height: 1.25 !important;
+}
+
+/* Admin plan text must read horizontally, not vertical stacked words */
+#admin h2,
+#admin h3,
+#admin h4,
+#admin p,
+#admin li,
+#admin span,
+#admin strong,
+#admin button,
+#admin a,
+#dashboard h2,
+#dashboard h3,
+#dashboard h4,
+#dashboard p,
+#dashboard span {
+ word-break: normal !important;
+ overflow-wrap: break-word !important;
+ white-space: normal !important;
+}
+
+#admin .btn,
+#admin button,
+#admin a.btn {
+ white-space: normal !important;
+ min-width: 0 !important;
+}
+
+/* Admin overview should also align in landscape rows */
+#admin .overview-grid,
+#admin .stats-grid,
+#admin .admin-grid,
+#admin .usage-grid {
+ display: grid !important;
+ grid-template-columns: repeat(4, minmax(180px, 1fr)) !important;
+ gap: 20px !important;
+ width: 100% !important;
+ max-width: 1480px !important;
+}
+
+#admin .admin-two-column,
+#admin .admin-overview-row,
+#admin .admin-landscape-row {
+ display: grid !important;
+ grid-template-columns: minmax(0, 1fr) minmax(320px, .8fr) !important;
+ gap: 32px !important;
+ align-items: start !important;
+ width: 100% !important;
+ max-width: 1480px !important;
+}
+
+/* Keep page content centered and wide */
+#admin,
+#dashboard {
+ width: 100% !important;
+}
+
+.app main,
+.main-content,
+.dashboard-content,
+.admin-content {
+ min-width: 0 !important;
+}
+
+/* Responsive fallbacks */
+@media (max-width: 1180px) {
+ #dashboard .grid.three,
+ #dashboard .quick-actions-grid,
+ #dashboard .dashboard-grid,
+ #dashboard .feature-grid,
+ #admin .grid.three,
+ #admin .admin-plans,
+ #admin .plan-grid,
+ #admin .plans-grid,
+ #planMatrix,
+ #planMatrixOut {
+ grid-template-columns: 1fr !important;
+ }
+
+ #admin .grid.three > *,
+ #admin .admin-plans > *,
+ #admin .plan-grid > *,
+ #admin .plans-grid > *,
+ #planMatrix > *,
+ #planMatrixOut > * {
+ min-width: 0 !important;
+ }
+
+ #admin .overview-grid,
+ #admin .stats-grid,
+ #admin .admin-grid,
+ #admin .usage-grid {
+ grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+ }
+
+ #admin .admin-two-column,
+ #admin .admin-overview-row,
+ #admin .admin-landscape-row {
+ grid-template-columns: 1fr !important;
+ }
+}
+
+@media (max-width: 680px) {
+ #admin .overview-grid,
+ #admin .stats-grid,
+ #admin .admin-grid,
+ #admin .usage-grid {
+ grid-template-columns: 1fr !important;
+ }
+
+ #dashboard .card,
+ #dashboard .item,
+ #admin .card,
+ #admin .item {
+ padding: 24px !important;
+ }
+}
